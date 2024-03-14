@@ -69,7 +69,7 @@ Log::_levelString(
     const _Level a_level
 ) const
 {
-	const static map<Level, std::string> levels
+	static const map<Level, std::string> levels
 	{
 		{Level::Off,     "Off"},
 		{Level::Trace,   "Trace"},
