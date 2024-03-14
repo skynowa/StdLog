@@ -6,6 +6,7 @@
 - [ ] Mode - StdCout, File
 - [ ] Level / VerboseLevel
 - [ ] Extra log fields
+- [ ] AutoLog
 - [ ] xxxxxxxxx
 
 ## See

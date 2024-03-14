@@ -13,6 +13,7 @@
 
 // STL
 #include <string>
+#include <map>
 #include <iostream>
 #include <algorithm>
 //-------------------------------------------------------------------------------------------------

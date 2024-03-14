@@ -69,15 +69,15 @@ Log::_levelString(
     const _Level a_level
 ) const
 {
-	static const map<Level, std::string> levels
+	static const std::map<_Level, std::string> levels
 	{
-		{Level::Off,     "Off"},
-		{Level::Trace,   "Trace"},
-		{Level::Debug,   "Debug"},
-		{Level::Info,    "Info"},
-		{Level::Warning, "Warning"},
-		{Level::Error,   "Error"},
-		{Level::Fatal,   "Fatal"}
+		{_Level::Off,     "Off"},
+		{_Level::Trace,   "Trace"},
+		{_Level::Debug,   "Debug"},
+		{_Level::Info,    "Info"},
+		{_Level::Warning, "Warning"},
+		{_Level::Error,   "Error"},
+		{_Level::Fatal,   "Fatal"}
 	};
 
 	auto it = levels.find(a_level);
