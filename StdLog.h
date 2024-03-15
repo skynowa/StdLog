@@ -42,6 +42,13 @@ public:
 	void trace(const std::string &subject, const std::string &text) const;
 ///\}
 
+	template<typename T>
+	Log & operator << (const T &value)
+	{
+		std::cout << value << ' ';
+		return *this;
+	}
+
 private:
 	enum class _Level
 		/// log level
