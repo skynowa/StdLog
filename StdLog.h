@@ -34,7 +34,7 @@ namespace stdlog
 {
 
 //-------------------------------------------------------------------------------------------------
-class Log final
+class Log
 	/// Log to std::cout
 {
 public:
