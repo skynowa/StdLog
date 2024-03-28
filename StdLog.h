@@ -58,6 +58,8 @@ private:
 		Fatal   = 6
 	};
 
+	const std::string _delimiter;
+
 	void        _print(const _Level level, const std::string &subject, const std::string &text) const;
     std::string _levelString(const _Level level) const;
 };

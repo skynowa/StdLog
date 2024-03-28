@@ -9,7 +9,8 @@ namespace stdlog
 
 //-------------------------------------------------------------------------------------------------
 inline
-Log::Log()
+Log::Log() :
+	_delimiter(" | ")
 {
 }
 //-------------------------------------------------------------------------------------------------
@@ -45,9 +46,9 @@ Log::_print(
 	const std::string &a_text
 ) const
 {
-	const std::string &module    = "[app]";
-	const std::string &dateTime  = "14-Mar-2024";
-	const std::string &level     = _levelString(a_level);
+	const std::string &module   = "[app]";
+	const std::string &dateTime = "14-Mar-2024";
+	const std::string &level    = _levelString(a_level);
 
 	if (0) {
 		std::cout
@@ -60,14 +61,12 @@ Log::_print(
 			<< " Text:       " << a_text                            << "\n"
 			<< "--------------------------------------------------" << std::endl;
 	} else {
-		const std::string delimiter = " | ";
-
 		std::cout
-			<< module    << delimiter
-			<< dateTime  << delimiter
-			<< level     << delimiter
-			<< a_subject << delimiter
-			<< a_text    << delimiter
+			<< module    << _delimiter
+			<< dateTime  << _delimiter
+			<< level     << _delimiter
+			<< a_subject << _delimiter
+			<< a_text    << _delimiter
 			<< std::endl;
 	}
 }
