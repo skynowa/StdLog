@@ -8,9 +8,18 @@ namespace stdlog
 {
 
 //-------------------------------------------------------------------------------------------------
+Log::Log(
+	const std::string &a_app_name,
+	const std::string &a_delimiter
+) :
+	_delimiter(a_delimiter),
+	_app_name (a_app_name)
+{
+}
+//-------------------------------------------------------------------------------------------------
 inline
 Log::Log() :
-	_delimiter(" | ")
+	Log("app", " | ")
 {
 }
 //-------------------------------------------------------------------------------------------------
@@ -48,7 +57,7 @@ Log::_print(
 ) const
 {
 	const std::string &module   = "[" + _modulePath() + "]";
-	const std::string &app      = "[app]";
+	const std::string &app      = "[" + _app_name + "]";
 	const std::string &dateTime = _currentDateTime() ;
 	const std::string &level    = _levelString(a_level);
 

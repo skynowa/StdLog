@@ -41,7 +41,8 @@ public:
 ///\name ctors, dtor
 ///\{
 	Log();
-	~Log() = default;
+	Log(const std::string &app_name, const std::string &delimiter);
+   ~Log() = default;
 
 	Log(const Log &) = delete;
 	Log(Log &&) = delete;
@@ -72,6 +73,7 @@ private:
 	};
 
 	const std::string _delimiter;
+	const std::string _app_name;
 
 	void        _print(const _Level level, const std::string &subject, const std::string &text) const;
     std::string _levelString(const _Level level) const;
