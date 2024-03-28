@@ -19,6 +19,8 @@ int main(int, char **)
 		Log() << "Hello, World!" << 42 << 3.14 << "test" << "long message now ";
 	}
 
+	std::cout << std::endl;
+
     return EXIT_SUCCESS;
 }
 //-------------------------------------------------------------------------------------------------

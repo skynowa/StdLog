@@ -43,11 +43,7 @@ public:
 ///\}
 
 	template<typename T>
-	Log & operator << (const T &value)
-	{
-		std::cout << value << ' ';
-		return *this;
-	}
+	Log & operator << (const T &value);
 
 private:
 	enum class _Level
