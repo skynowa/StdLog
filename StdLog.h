@@ -54,10 +54,18 @@ public:
 ///\name Send alerts
 ///\{
 	void trace(const std::string &title, const std::string &text) const;
+	void debug(const std::string &title, const std::string &text) const;
+	void info(const std::string &title, const std::string &text) const;
+	void warning(const std::string &title, const std::string &text) const;
+	void error(const std::string &title, const std::string &text) const;
+	void fatal(const std::string &title, const std::string &text) const;
 ///\}
 
+///\name operators
+///\{
 	template<typename T>
 	Log & operator << (const T &value);
+///\}
 
 private:
 	enum class _Level

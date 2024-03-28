@@ -32,6 +32,59 @@ Log::trace(
 	_print(_Level::Trace, a_subject, a_text);
 }
 //-------------------------------------------------------------------------------------------------
+inline void
+Log::debug(
+	const std::string &a_subject,
+	const std::string &a_text
+) const
+{
+	_print(_Level::Debug, a_subject, a_text);
+}
+//-------------------------------------------------------------------------------------------------
+inline void
+Log::info(
+	const std::string &a_subject,
+	const std::string &a_text
+) const
+{
+	_print(_Level::Info, a_subject, a_text);
+}
+//-------------------------------------------------------------------------------------------------
+inline void
+Log::warning(
+	const std::string &a_subject,
+	const std::string &a_text
+) const
+{
+	_print(_Level::Warning, a_subject, a_text);
+}
+//-------------------------------------------------------------------------------------------------
+inline void
+Log::error(
+	const std::string &a_subject,
+	const std::string &a_text
+) const
+{
+	_print(_Level::Error, a_subject, a_text);
+}
+//-------------------------------------------------------------------------------------------------
+inline void
+Log::fatal(
+	const std::string &a_subject,
+	const std::string &a_text
+) const
+{
+	_print(_Level::Fatal, a_subject, a_text);
+}
+//-------------------------------------------------------------------------------------------------
+
+
+/**************************************************************************************************
+*    operators
+*
+**************************************************************************************************/
+
+//-------------------------------------------------------------------------------------------------
 template<typename T>
 Log &
 Log::operator << (const T &a_value)
