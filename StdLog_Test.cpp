@@ -12,11 +12,11 @@ int main(int, char **)
 	using namespace  stdlog;
 
 	{
-		Log().trace("test", "long message now ");
+		Log().trace("Title", "Long message");
 	}
 
 	{
-		Log() << "Hello, World!" << 42 << 3.14 << "test" << "long message now ";
+		Log() << "Title" << "Long message";
 	}
 
 	std::cout << std::endl;

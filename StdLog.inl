@@ -27,7 +27,7 @@ template<typename T>
 Log &
 Log::operator << (const T &value)
 {
-	std::cout << value << ' ';
+	std::cout << value << _delimiter;
 	return *this;
 }
 //-------------------------------------------------------------------------------------------------
