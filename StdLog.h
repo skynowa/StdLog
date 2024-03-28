@@ -6,6 +6,19 @@
 
 #pragma once
 
+#if   defined(_WIN32)
+    #include <windows.h>
+#elif defined(__linux__)
+    #include <unistd.h>
+    #include <linux/limits.h>
+#elif defined(__FreeBSD__)
+    #include <sys/sysctl.h>
+#elif defined(__APPLE__)
+    #include <mach-o/dyld.h> // ::_NSGetExecutablePath
+#else
+    #warning StdTest: unsupported OS environment
+#endif
+
 // C library
 #include <cerrno>
 #include <ctime>
@@ -62,6 +75,11 @@ private:
 
 	void        _print(const _Level level, const std::string &subject, const std::string &text) const;
     std::string _levelString(const _Level level) const;
+
+	std::string _currentDateTime() const;
+		///< current date/time, format is %Y-%m-%d.%X
+	std::string _modulePath() const;
+		///< Get module path
 };
 //-------------------------------------------------------------------------------------------------
 
