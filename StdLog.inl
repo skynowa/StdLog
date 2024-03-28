@@ -25,9 +25,9 @@ Log::trace(
 //-------------------------------------------------------------------------------------------------
 template<typename T>
 Log &
-Log::operator << (const T &value)
+Log::operator << (const T &a_value)
 {
-	std::cout << value << _delimiter;
+	std::cout << a_value << _delimiter;
 
 	return *this;
 }
@@ -43,11 +43,12 @@ Log::operator << (const T &value)
 inline void
 Log::_print(
 	const _Level       a_level,
-	const std::string &a_subject,
+	const std::string &a_title,
 	const std::string &a_text
 ) const
 {
-	const std::string &module   = "[app]";
+	const std::string &module   = "[module]";
+	const std::string &app      = "[app]";
 	const std::string &dateTime = "14-Mar-2024";
 	const std::string &level    = _levelString(a_level);
 
@@ -56,18 +57,20 @@ Log::_print(
 			<< "\n"
 			<< "--------------------- STD_LOG --------------------" << "\n"
 			<< " Module:     " << module                            << "\n"
+			<< " App:        " << app                               << "\n"
 			<< " Date time:  " << dateTime                          << "\n"
 			<< " Level:      " << level                             << "\n"
-			<< " Subject:    " << a_subject                         << "\n"
+			<< " Title:      " << a_title                           << "\n"
 			<< " Text:       " << a_text                            << "\n"
 			<< "--------------------------------------------------" << std::endl;
 	} else {
 		std::cout
-			<< module    << _delimiter
-			<< dateTime  << _delimiter
-			<< level     << _delimiter
-			<< a_subject << _delimiter
-			<< a_text    << _delimiter
+			<< module   << _delimiter
+			<< app      << _delimiter
+			<< dateTime << _delimiter
+			<< level    << _delimiter
+			<< a_title  << _delimiter
+			<< a_text
 			<< std::endl;
 	}
 }

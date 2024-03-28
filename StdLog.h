@@ -39,7 +39,7 @@ public:
 
 ///\name Send alerts
 ///\{
-	void trace(const std::string &subject, const std::string &text) const;
+	void trace(const std::string &title, const std::string &text) const;
 ///\}
 
 	template<typename T>
