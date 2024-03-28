@@ -40,8 +40,16 @@ class Log
 public:
 ///\name ctors, dtor
 ///\{
+	enum class OutputType
+		/// log type
+	{
+		Off    = 0,
+		Line   = 1,	// Default
+		MsgBox = 2
+	};
+
 	Log();
-	Log(const std::string &app_name, const std::string &delimiter);
+	Log(const OutputType type, const std::string &app_name, const std::string &delimiter);
    ~Log() = default;
 
 	Log(const Log &) = delete;
@@ -80,6 +88,7 @@ private:
 		Fatal   = 6
 	};
 
+	const OutputType  _type {OutputType::MsgBox};
 	const std::string _delimiter;
 	const std::string _app_name;
 

@@ -1,32 +1,46 @@
 /**
- * \file  main.cpp
+ * \file  StdLog_Test.cpp
  * \brief
  */
 
 
 #include <iostream>
 #include "StdLog.h"
+
+using namespace stdlog;
 //-------------------------------------------------------------------------------------------------
-class CoreLog final :
-	public stdlog::Log
+class CoreLineLog final :
+	public Log
 {
 public:
-	CoreLog() :
-		stdlog::Log("Core", "|")
+	CoreLineLog() :
+		Log(Log::OutputType::Line, "Core", "|")
+	{
+	}
+};
+//-------------------------------------------------------------------------------------------------
+class CoreMsgBoxLog final :
+	public Log
+{
+public:
+	CoreMsgBoxLog() :
+		Log(Log::OutputType::MsgBox, "Core", "|")
 	{
 	}
 };
 //-------------------------------------------------------------------------------------------------
 int main(int, char **)
 {
-	using namespace  stdlog;
-
 	{
-		CoreLog().trace("Title", "Long message");
+		CoreLineLog().trace("Title", "Long message");
 	}
 
 	{
-		CoreLog() << "Title" << "Long message";
+		CoreMsgBoxLog().trace("Title", "Long message");
+	}
+
+	{
+		CoreLineLog() << "Title" << "Long message";
 	}
 
 	std::cout << std::endl;
