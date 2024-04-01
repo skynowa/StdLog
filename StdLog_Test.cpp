@@ -14,7 +14,7 @@ class CoreTraceLog final :
 {
 public:
 	CoreTraceLog() :
-		Log("Core", Log::Level::Trace, "|")
+		Log("Core", Log::Level::Trace, "")
 	{
 	}
 };
