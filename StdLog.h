@@ -71,7 +71,7 @@ private:
 	};
 
 	const std::string _delimiter;
-	const std::string _app_name;
+	const std::string _appName;
 
     std::string _levelString(const _Level level) const;
 
