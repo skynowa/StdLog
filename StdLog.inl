@@ -45,22 +45,7 @@ Log &
 Log::operator << (const T &a_value)
 {
 #if 1
-	if (_isBol) {
-		_isBol = false;
-
-		const std::string &module   = "[" + _modulePath() + "]";
-		const std::string &app      = "[" + _app_name + "]";
-		const std::string &dateTime = _currentDateTime() ;
-		const std::string &level    = _levelString(/* a_level */ _Level::Trace);
-
-		std::cout
-			<< module   << _delimiter
-			<< app      << _delimiter
-			<< dateTime << _delimiter
-			<< level;
-	}
-
-	std::cout << _delimiter << a_value;
+	std::cout << a_value << _delimiter;
 #else
 	_print(_Level::Trace, a_value, "");
 #endif
