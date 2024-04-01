@@ -11,16 +11,18 @@ namespace stdlog
 inline
 Log::Log(
 	const std::string &a_appName,
+	const Level        a_level,
 	const std::string &a_delimiter
 ) :
-	_delimiter(a_delimiter),
-	_appName  (a_appName)
+	_appName  (a_appName),
+	_level    (a_level),
+	_delimiter(a_delimiter)
 {
 }
 //-------------------------------------------------------------------------------------------------
 inline
 Log::Log() :
-	Log("app", " | ")
+	Log("app", Level::Trace, " | ")
 {
 }
 //-------------------------------------------------------------------------------------------------
@@ -48,7 +50,7 @@ Log::operator << (const T &a_value)
 		const std::string &module   = "[" + _modulePath() + "]";
 		const std::string &app      = "[" + _appName + "]";
 		const std::string &dateTime = _currentDateTime() ;
-		const std::string &level    = _levelString(/* a_level */ _Level::Trace);
+		const std::string &level    = _levelString(_level);
 
 		std::cout
 			<< module   << _delimiter
@@ -72,18 +74,18 @@ Log::operator << (const T &a_value)
 //-------------------------------------------------------------------------------------------------
 inline std::string
 Log::_levelString(
-    const _Level a_level
+    const Level a_level
 ) const
 {
-	static const std::map<_Level, std::string> levels
+	static const std::map<Level, std::string> levels
 	{
-		{_Level::Off,     "Off"},
-		{_Level::Trace,   "Trace"},
-		{_Level::Debug,   "Debug"},
-		{_Level::Info,    "Info"},
-		{_Level::Warning, "Warning"},
-		{_Level::Error,   "Error"},
-		{_Level::Fatal,   "Fatal"}
+		{Level::Off,     "Off"},
+		{Level::Trace,   "Trace"},
+		{Level::Debug,   "Debug"},
+		{Level::Info,    "Info"},
+		{Level::Warning, "Warning"},
+		{Level::Error,   "Error"},
+		{Level::Fatal,   "Fatal"}
 	};
 
 	auto it = levels.find(a_level);
