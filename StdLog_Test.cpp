@@ -24,7 +24,7 @@ int main(int, char **)
 	{
 		CoreTraceLog() << "Title #1" << "Long message" << 111.0;
 		CoreTraceLog() << "Title #2" << "Long message" << 222.0;
-		CoreTraceLog() << "Title #3" << "Long message" << 333.0;
+		CoreTraceLog() << "Title #3" << "Long message" << 333.0 << std::endl;
 	}
 
 	std::cout << std::endl;
