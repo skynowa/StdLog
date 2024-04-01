@@ -32,11 +32,11 @@ public:
 int main(int, char **)
 {
 	{
-		CoreLineLog().trace("Title", "Long message");
+		/// CoreLineLog().trace("Title", "Long message");
 	}
 
 	{
-		CoreMsgBoxLog().trace("Title", "Long message");
+		/// CoreMsgBoxLog().trace("Title", "Long message");
 	}
 
 	{
