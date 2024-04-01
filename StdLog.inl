@@ -10,11 +10,9 @@ namespace stdlog
 //-------------------------------------------------------------------------------------------------
 inline
 Log::Log(
-	const OutputType   a_type,
 	const std::string &a_app_name,
 	const std::string &a_delimiter
 ) :
-	_type     (a_type),
 	_delimiter(a_delimiter),
 	_app_name (a_app_name)
 {
@@ -22,7 +20,7 @@ Log::Log(
 //-------------------------------------------------------------------------------------------------
 inline
 Log::Log() :
-	Log(OutputType::Line, "app", " | ")
+	Log("app", " | ")
 {
 }
 //-------------------------------------------------------------------------------------------------
@@ -71,45 +69,6 @@ Log::operator << (const T &a_value)
 *
 **************************************************************************************************/
 
-//-------------------------------------------------------------------------------------------------
-inline void
-Log::_print(
-	const _Level       a_level,
-	const std::string &a_title,
-	const std::string &a_text
-) const
-{
-	const std::string &module   = "[" + _modulePath() + "]";
-	const std::string &app      = "[" + _app_name + "]";
-	const std::string &dateTime = _currentDateTime() ;
-	const std::string &level    = _levelString(a_level);
-
-	if      (_type == OutputType::Line) {
-		std::cout
-			<< module   << _delimiter
-			<< app      << _delimiter
-			<< dateTime << _delimiter
-			<< level    << _delimiter
-			<< a_title  << _delimiter
-			<< a_text
-			<< std::endl;
-	}
-	else if (_type == OutputType::MsgBox) {
-		std::cout
-			<< "\n"
-			<< "--------------------- STD_LOG --------------------" << "\n"
-			<< " Module:     " << module                            << "\n"
-			<< " App:        " << app                               << "\n"
-			<< " Date time:  " << dateTime                          << "\n"
-			<< " Level:      " << level                             << "\n"
-			<< " Title:      " << a_title                           << "\n"
-			<< " Text:       " << a_text                            << "\n"
-			<< "--------------------------------------------------" << std::endl;
-	}
-	else {
-		///
-	}
-}
 //-------------------------------------------------------------------------------------------------
 inline std::string
 Log::_levelString(

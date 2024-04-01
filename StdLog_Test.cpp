@@ -14,31 +14,13 @@ class CoreLineLog final :
 {
 public:
 	CoreLineLog() :
-		Log(Log::OutputType::Line, "Core", "|")
-	{
-	}
-};
-//-------------------------------------------------------------------------------------------------
-class CoreMsgBoxLog final :
-	public Log
-{
-public:
-	CoreMsgBoxLog() :
-		Log(Log::OutputType::MsgBox, "Core", "|")
+		Log("Core", "|")
 	{
 	}
 };
 //-------------------------------------------------------------------------------------------------
 int main(int, char **)
 {
-	{
-		/// CoreLineLog().trace("Title", "Long message");
-	}
-
-	{
-		/// CoreMsgBoxLog().trace("Title", "Long message");
-	}
-
 	{
 		CoreLineLog() << "Title #1" << "Long message" << 111.0;
 		CoreLineLog() << "Title #2" << "Long message" << 222.0;
