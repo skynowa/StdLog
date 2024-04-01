@@ -50,7 +50,7 @@ public:
 
 	Log();
 	Log(const OutputType type, const std::string &app_name, const std::string &delimiter);
-   ~Log() = default;
+   ~Log();
 
 	Log(const Log &) = delete;
 	Log(Log &&) = delete;
