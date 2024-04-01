@@ -40,8 +40,20 @@ class Log
 public:
 ///\name ctors, dtor
 ///\{
+	enum class Level
+		/// log level
+	{
+		Off     = 0,
+		Trace   = 1,
+		Debug   = 2,
+		Info    = 3,
+		Warning = 4,
+		Error   = 5,
+		Fatal   = 6
+	};
+
 	Log();
-	Log(const std::string &app_name, const std::string &delimiter);
+	Log(const std::string &appName, const Level level, const std::string &delimiter);
    ~Log();
 
 	Log(const Log &) = delete;
@@ -58,22 +70,12 @@ public:
 ///\}
 
 private:
-	enum class _Level
-		/// log level
-	{
-		Off     = 0,
-		Trace   = 1,
-		Debug   = 2,
-		Info    = 3,
-		Warning = 4,
-		Error   = 5,
-		Fatal   = 6
-	};
-
-	const std::string _delimiter;
 	const std::string _appName;
+	const Level       _level;
+	const std::string _delimiter;
 
-    std::string _levelString(const _Level level) const;
+
+    std::string _levelString(const Level level) const;
 		///< Level enum as string
 	std::string _currentDateTime() const;
 		///< current date/time, format is %Y-%m-%d.%X
