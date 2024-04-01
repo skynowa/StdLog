@@ -66,10 +66,10 @@ Log::operator << (const T &a_value)
 //-------------------------------------------------------------------------------------------------
 Log &
 Log::operator << (
-	std::ostream& (*manipulator)(std::ostream &)
+	std::ostream &(*a_manipulator)(std::ostream &)
 )
 {
-	std::cout << manipulator;
+	std::cout << a_manipulator;
 	return *this;
 }
 //-------------------------------------------------------------------------------------------------
