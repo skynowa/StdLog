@@ -67,14 +67,13 @@ public:
 ///\{
 	template<typename T>
 	Log & operator << (const T &value);
-	Log & operator << (std::ostream& (*manipulator)(std::ostream &));
+	Log & operator << (std::ostream &(*manipulator)(std::ostream &));
 ///\}
 
 private:
 	const std::string _appName;
 	const Level       _level;
 	const std::string _delimiter;
-
 
     std::string _levelString(const Level level) const;
 		///< Level enum as string
