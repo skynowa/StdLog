@@ -44,7 +44,6 @@ template<typename T>
 Log &
 Log::operator << (const T &a_value)
 {
-#if 1
 	if (_isBol) {
 		_isBol = false;
 
@@ -61,9 +60,6 @@ Log::operator << (const T &a_value)
 	}
 
 	std::cout << _delimiter << a_value;
-#else
-	_print(_Level::Trace, a_value, "");
-#endif
 
 	return *this;
 }

@@ -83,6 +83,7 @@ private:
 	const std::string _app_name;
 
 	void        _print(const _Level level, const std::string &subject, const std::string &text) const;
+		///< UNUSED: _print
     std::string _levelString(const _Level level) const;
 
 	std::string _currentDateTime() const;
