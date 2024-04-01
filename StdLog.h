@@ -41,7 +41,7 @@ public:
 ///\name ctors, dtor
 ///\{
 	enum class OutputType
-		/// log type
+		/// Output type
 	{
 		Off    = 0,
 		Line   = 1,	// Default
