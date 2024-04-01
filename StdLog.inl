@@ -64,7 +64,7 @@ Log::operator << (const T &a_value)
 	return *this;
 }
 //-------------------------------------------------------------------------------------------------
-Log &
+inline Log &
 Log::operator << (
 	std::ostream &(*a_manipulator)(std::ostream &)
 )
