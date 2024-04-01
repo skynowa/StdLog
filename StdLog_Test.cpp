@@ -40,9 +40,7 @@ int main(int, char **)
 	}
 
 	{
-		CoreLineLog() << "Title #1" << "Long message" << 111.0;
-		CoreLineLog() << "Title #2" << "Long message" << 222.0;
-		CoreLineLog() << "Title #3" << "Long message" << 333.0;
+		CoreLineLog() << "Title" << "Long message";
 	}
 
 	std::cout << std::endl;

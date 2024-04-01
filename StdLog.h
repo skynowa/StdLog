@@ -89,8 +89,6 @@ private:
 		///< current date/time, format is %Y-%m-%d.%X
 	std::string _modulePath() const;
 		///< Get module path
-
-	bool _isBol {true};
 };
 //-------------------------------------------------------------------------------------------------
 
