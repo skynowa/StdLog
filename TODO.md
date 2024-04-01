@@ -1,7 +1,7 @@
 # TODO
 
 - [ ] Colors
-- [ ] operator <<
+- [+] operator <<
 - [ ] Log file name format
 - [ ] Mode - StdCout, File
 - [ ] Level / VerboseLevel
@@ -11,4 +11,4 @@
 
 ## See
 
-- [ ] qDebug()
+- [!] qDebug()
