@@ -96,23 +96,33 @@ Log::_levelString(
     const Level a_level
 ) const
 {
-	static const std::map<Level, std::string> levels
-	{
-		{Level::Off,     "Off"},
-		{Level::Trace,   "Trace"},
-		{Level::Debug,   "Debug"},
-		{Level::Info,    "Info"},
-		{Level::Warning, "Warning"},
-		{Level::Error,   "Error"},
-		{Level::Fatal,   "Fatal"}
-	};
+	std::string sRv;
 
-	auto it = levels.find(a_level);
-	if (it == levels.cend()) {
-		return {};
+	switch (a_level) {
+	case Level::Off:
+		sRv = "Off";
+		break;
+	case Level::Trace:
+		sRv = "Trace";
+		break;
+	case Level::Debug:
+		sRv = "Debug";
+		break;
+	case Level::Info:
+		sRv = "Info";
+		break;
+	case Level::Warning:
+		sRv = "Warning";
+		break;
+	case Level::Error:
+		sRv = "Error";
+		break;
+	case Level::Fatal:
+		sRv = "Fatal";
+		break;
 	}
 
-	return it->second;
+	return sRv;
 }
 //-------------------------------------------------------------------------------------------------
 inline std::string
