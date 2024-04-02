@@ -29,6 +29,11 @@
 #include <map>
 #include <iostream>
 #include <algorithm>
+
+// Qt
+#if QT_VERSION
+	#include <QString>
+#endif
 //-------------------------------------------------------------------------------------------------
 namespace stdlog
 {
@@ -67,11 +72,9 @@ public:
 ///\{
 	template<typename T>
 	Log & operator << (const T &value);
+		///< std, QString
 	Log & operator << (std::ostream &(*manipulator)(std::ostream &));
-
-#if QT_VERSION
-	Log & operator << (const QString &value);
-#endif
+		///< std::endl
 ///\}
 
 private:
