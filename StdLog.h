@@ -79,7 +79,7 @@ public:
 
 private:
 	const std::string _appName;
-	const Level       _level;
+	const Level       _level {Level::Off};
 	const std::string _delimiter;
 
     std::string _levelString(const Level level) const;
