@@ -82,7 +82,7 @@ Log::operator << (
 	const QString &a_value
 )
 {
-	std::cout << a_value.toStdString();
+	std::cout << _delimiter << a_value.toStdString();
 	return *this;
 }
 
