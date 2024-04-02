@@ -61,7 +61,15 @@ Log::operator << (
 			<< level;
 	}
 
-	std::cout << _delimiter << a_value;
+#if QT_VERSION
+	if constexpr (std::is_same_v<T, QString>) {
+		std::cout << _delimiter << a_value.toStdString();
+	} else {
+#endif
+		std::cout << _delimiter << a_value;
+#if QT_VERSION
+	}
+#endif
 
 	return *this;
 }
@@ -74,19 +82,6 @@ Log::operator << (
 	std::cout << a_manipulator;
 	return *this;
 }
-//-------------------------------------------------------------------------------------------------
-#if QT_VERSION
-
-inline Log &
-Log::operator << (
-	const QString &a_value
-)
-{
-	std::cout << _delimiter << a_value.toStdString();
-	return *this;
-}
-
-#endif
 //-------------------------------------------------------------------------------------------------
 
 
