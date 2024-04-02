@@ -42,7 +42,9 @@ Log::~Log()
 //-------------------------------------------------------------------------------------------------
 template<typename T>
 inline Log &
-Log::operator << (const T &a_value)
+Log::operator << (
+	const T &a_value
+)
 {
 	if (_isBol) {
 		_isBol = false;
@@ -72,6 +74,19 @@ Log::operator << (
 	std::cout << a_manipulator;
 	return *this;
 }
+//-------------------------------------------------------------------------------------------------
+#if QT_VERSION
+
+inline Log &
+Log::operator << (
+	const QString &a_value
+)
+{
+	std::cout << a_value.toStdString();
+	return *this;
+}
+
+#endif
 //-------------------------------------------------------------------------------------------------
 
 

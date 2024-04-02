@@ -68,6 +68,10 @@ public:
 	template<typename T>
 	Log & operator << (const T &value);
 	Log & operator << (std::ostream &(*manipulator)(std::ostream &));
+
+#if QT_VERSION
+	Log & operator << (const QString &value);
+#endif
 ///\}
 
 private:
