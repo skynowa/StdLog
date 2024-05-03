@@ -95,4 +95,19 @@ private:
 
 } // stdlog
 //-------------------------------------------------------------------------------------------------
+#define STD_LOG_FACTORY_IMPL(logType, appName, level, delimiter) \
+	class logType final : \
+		public stdlog::Log \
+	{ \
+	public: \
+		logType() : \
+			Log(appName, level, delimiter) \
+		{ \
+		} \
+	}
+	///< Log factory - as base
+#define STD_LOG_TRACE(logType, appName) \
+	STD_LOG_FACTORY_IMPL(logType, appName, Log::Level::Trace, " ")
+	///< Log factory - as trace level
+//-------------------------------------------------------------------------------------------------
 #include "StdLog.inl"
