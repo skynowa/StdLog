@@ -83,7 +83,7 @@ private:
 	const std::string _delimiter;
 
     std::string _levelString(const Level level) const;
-		///< Level enum as string
+        ///< Level enum as string
 	std::string _currentDateTime() const;
 		///< current date/time, format is %Y-%m-%d.%X
 	std::string _modulePath() const;
