@@ -96,33 +96,17 @@ Log::_levelString(
     const Level a_level
 ) const
 {
-	std::string sRv;
-
 	switch (a_level) {
-	case Level::Off:
-		sRv = "Off";
-		break;
-	case Level::Trace:
-		sRv = "Trace";
-		break;
-	case Level::Debug:
-		sRv = "Debug";
-		break;
-	case Level::Info:
-		sRv = "Info";
-		break;
-	case Level::Warning:
-		sRv = "Warning";
-		break;
-	case Level::Error:
-		sRv = "Error";
-		break;
-	case Level::Fatal:
-		sRv = "Fatal";
-		break;
+	case Level::Off:     return "Off";
+	case Level::Trace:   return "Trace";
+	case Level::Debug:   return "Debug";
+	case Level::Info:    return "Info";
+	case Level::Warning: return "Warning";
+	case Level::Error:   return "Error";
+	case Level::Fatal:   return "Fatal";
 	}
 
-	return sRv;
+	return {};
 }
 //-------------------------------------------------------------------------------------------------
 inline std::string
