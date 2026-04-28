@@ -178,7 +178,7 @@ Log::_modulePath() const
     char            buff[PATH_MAX + 1] {};
     std::size_t     buffSize           {sizeof(buff) - 1};
 
-    int iRv = ::sysctl(mib, mibSize, buff, &buffSize, nulptr, 0U);
+    int iRv = ::sysctl(mib, mibSize, buff, &buffSize, nullptr, 0U);
     if (iRv == - 1) {
         return "<unknown>";
     }
@@ -186,9 +186,9 @@ Log::_modulePath() const
     sRv.assign(buff);
 #elif defined(__APPLE__)
     constexpr auto buffSize = static_cast<std::uint32_t>(PATH_MAX);
-	std::tstring_t buff(buffSize + 1, {});
+	std::string buff(buffSize + 1, {});
 
-	int_t iRv = ::_NSGetExecutablePath(&buff[0], &buffSize);
+	int iRv = ::_NSGetExecutablePath(&buff[0], &buffSize);
 	if (iRv != 0) {
 		buff.resize(buffSize);
 
