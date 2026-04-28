@@ -35,6 +35,7 @@ int main(int, char **)
 		TestLog() << "Test #1" << "Test message" << 111.0;
 		TestLog() << "Test #2" << "Test message" << 222.0;
 		TestLog() << "Test #3" << "Test message" << 333.0 << std::endl;
+		TestLog() << "Test multiline #1" << std::endl << "Test multiline #2";
 	}
 
 	std::cout << std::endl;

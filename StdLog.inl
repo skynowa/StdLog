@@ -80,6 +80,11 @@ Log::operator << (
 )
 {
 	std::cout << a_manipulator;
+
+	if (a_manipulator == static_cast<std::ostream &(*)(std::ostream &)>(std::endl)) {
+		_isBol = true;
+	}
+
 	return *this;
 }
 //-------------------------------------------------------------------------------------------------
